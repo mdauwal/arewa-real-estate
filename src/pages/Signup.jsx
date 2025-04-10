@@ -31,16 +31,26 @@ const Signup = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     // Validation for fullName, email, and password
-    if (email && password.length > 5) {
+    if (fullName && emailRegex.test(email) && password.length > 5) {
       try {
+        // Create user with Firebase Auth
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
-        console.log("User created:", user.uid);
+
+        // Save user details in Firestore
+        await setDoc(doc(db, "users", user.uid), {
+          fullName,
+          email,
+          createdAt: new Date(),
+        });
+
+        toast.success("Signup successful!");
       } catch (error) {
-        console.error("Error during signup:", error.message);
+        toast.error("Signup failed. Please try again.");
+        console.error("Error during signup:", error);
       }
     } else {
-      console.error("Invalid input");
+      toast.error("Something went wrong! Please check your inputs.");
     }
   };
 
@@ -99,7 +109,7 @@ const Signup = () => {
             </Link>
           </div>
         </form>
-        <ToastContainer />
+        <ToastContainer /> {/* Toast container to display toasts */}
       </div>
     </>
   );

@@ -3,12 +3,13 @@ import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";  // Import Firebase Authentication
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAk1M3PNpoReIjcUUAGVPMpPErgPnFdyY0",
-  authDomain: "ardent-particle-408017.firebaseapp.com",
-  projectId: "ardent-particle-408017",
-  storageBucket: "ardent-particle-408017.appspot.com",
-  messagingSenderId: "111197201263",
-  appId: "1:111197201263:web:20dbbe1aee1c12391ffe9a"
+  apiKey: "AIzaSyAW1jiBtos9MVvQZ3hQzwErS3X6kn_KUqg",
+  authDomain: "arewa-real-estate.firebaseapp.com",
+  projectId: "arewa-real-estate",
+  storageBucket: "arewa-real-estate.appspot.com",
+  messagingSenderId: "421054404713",
+  appId: "1:421054404713:web:765ce2eebccacbb0192af8",
+  measurementId: "G-7ER7QVHE4L"
 };
 
 // Initialize Firebase

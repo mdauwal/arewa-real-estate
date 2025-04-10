@@ -264,9 +264,10 @@ button {
 }
 
 .socialLogin {
-  margin-top: 4rem;
+  margin-top: 0rem;
+  margin-bottom: 4rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
 }
 

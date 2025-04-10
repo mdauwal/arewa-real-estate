@@ -1,11 +1,14 @@
 import './App.css';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
+import 'react-toastify/dist/ReactToastify.css';
 import Layout from './components/Layout';
 import Explore from './pages/Explore';
 import Offers from './pages/Offers';
 import Profile from './pages/Profile';
 import Signin from './pages/Signin';
-import Signup from './pages/Signup'
+import Signup from './pages/Signup';
+import Forgotpassword from './pages/Forgotpassword'
+
 
 
 const router = createBrowserRouter([
@@ -37,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: 'signup',
         element: <Signup />
+      },
+      {
+        path: 'forogotpassword',
+        element: <Forgotpassword />
       }
     ],
   },

@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ReactComponent as ArrowRight } from "../assets/svg/keyboardArrowRightIcon.svg";
 import VisibilityIcon from "../assets/svg/visibilityIcon.svg";
+import OAuth from "../components/OAuth";
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -10,6 +11,7 @@ const SignIn = () => {
     password: "",
   });
   const { email, password } = formData;
+  const navigate = useNavigate()
 
   const onChange = (e) => {
     setFormData((prev) => {
@@ -19,6 +21,9 @@ const SignIn = () => {
       };
     });
   };
+  const onSubmit = async (e) => {
+    e.preventDefault();
+  }
 
   return (
     <>
@@ -26,7 +31,7 @@ const SignIn = () => {
         <header>
           <p className="pageHeader">Welcome Back</p>
         </header>
-        <form>
+        <form onSubmit={onSubmit}>
           <input
             type="email"
             placeholder="email"
@@ -64,6 +69,7 @@ const SignIn = () => {
             </Link>
           </div>
         </form>
+        <OAuth />
       </div>
     </>
   );
